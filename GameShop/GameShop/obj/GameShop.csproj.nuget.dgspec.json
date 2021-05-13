@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yaniv\\source\\repos\\GameShop\\GameShop\\GameShop.csproj": {}
+    "C:\\Users\\yaniv\\Source\\Repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\GameShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yaniv\\source\\repos\\GameShop\\GameShop\\GameShop.csproj": {
+    "C:\\Users\\yaniv\\Source\\Repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\GameShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yaniv\\source\\repos\\GameShop\\GameShop\\GameShop.csproj",
+        "projectUniqueName": "C:\\Users\\yaniv\\Source\\Repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\GameShop.csproj",
         "projectName": "GameShop",
-        "projectPath": "C:\\Users\\yaniv\\source\\repos\\GameShop\\GameShop\\GameShop.csproj",
+        "projectPath": "C:\\Users\\yaniv\\Source\\Repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\GameShop.csproj",
         "packagesPath": "C:\\Users\\yaniv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yaniv\\source\\repos\\GameShop\\GameShop\\obj\\",
+        "outputPath": "C:\\Users\\yaniv\\Source\\Repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,22 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
