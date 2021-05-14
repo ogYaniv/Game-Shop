@@ -4,14 +4,16 @@ using GameShop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameShop.Migrations
 {
     [DbContext(typeof(GameShopContext))]
-    partial class GameShopContextModelSnapshot : ModelSnapshot
+    [Migration("20210514121630_inity1")]
+    partial class inity1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace GameShop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ConsoleId")
+                    b.Property<int>("ConsoleId")
                         .HasColumnType("int");
 
                     b.Property<int>("Consoles")
@@ -136,9 +138,11 @@ namespace GameShop.Migrations
 
             modelBuilder.Entity("GameShop.Models.Product", b =>
                 {
-                    b.HasOne("GameShop.Models.Console", null)
+                    b.HasOne("GameShop.Models.Console", "Co")
                         .WithMany("Products")
-                        .HasForeignKey("ConsoleId");
+                        .HasForeignKey("ConsoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("GameShop.Models.ShoppingCart", null)
                         .WithMany("Products")
@@ -147,6 +151,8 @@ namespace GameShop.Migrations
                     b.HasOne("GameShop.Models.User", null)
                         .WithMany("OldPurchase")
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Co");
                 });
 
             modelBuilder.Entity("GameShop.Models.User", b =>

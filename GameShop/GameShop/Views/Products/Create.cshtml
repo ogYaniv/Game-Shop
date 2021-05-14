@@ -39,7 +39,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Genre" class="control-label"></label>
-                <select asp-for="Genre" class="form-control"></select>
+                <input list="search_list" asp-for="Genre" class="form-control">
+                <datalist id="search_list">
+                    <option lebel="Action" value="Action"></option>
+                    <option lebel="Adventure" value="Adventure"></option>
+                    <option lebel="Shooter" value="Shooter"></option>
+                    <option lebel="RolePlayingGames" value="RolePlayingGames"></option>
+                    <option lebel="Racing" value="Racing"></option>
+                    <option lebel="Sport" value="Sport"></option>
+                    <option lebel="Fighting" value="Fighting"></option>
+                    <option lebel="Consoles" value="Consoles"></option>
+                    <option lebel="Accessories" value="Accessories"></option>
+                </datalist>
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -54,7 +65,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Consoles" class="control-label"></label>
-                <select asp-for="Consoles" class="form-control"></select>
+                <input list="select_list" asp-for="Consoles" class="form-control"></>
+                <datalist id="select_list">
+                    <option lebel="Ps5" value="Ps5"></option>
+                    <option lebel="Ps4" value="Ps4"></option>
+                    <option lebel="XboxOne" value="XboxOne"></option>
+                    <option lebel="XboxXS" value="XboxXS"></option>
+                    <option lebel="Pc" value="Pc"></option>
+                </datalist>
                 <span asp-validation-for="Consoles" class="text-danger"></span>
             </div>
             <div class="form-group">

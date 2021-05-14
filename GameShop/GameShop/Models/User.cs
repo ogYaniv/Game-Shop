@@ -9,7 +9,7 @@ namespace GameShop.Models
     public enum UserType
     {
         Customer,
-        Manager
+        Admin
     }
     public class User
     {

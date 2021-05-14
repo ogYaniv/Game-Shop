@@ -4,14 +4,16 @@ using GameShop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameShop.Migrations
 {
     [DbContext(typeof(GameShopContext))]
-    partial class GameShopContextModelSnapshot : ModelSnapshot
+    [Migration("20210514104334_init3")]
+    partial class init3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,6 +44,12 @@ namespace GameShop.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("ConsoleId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ConsoleId1")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ConsoleId2")
                         .HasColumnType("int");
 
                     b.Property<int>("Consoles")
@@ -80,6 +88,10 @@ namespace GameShop.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ConsoleId");
+
+                    b.HasIndex("ConsoleId1");
+
+                    b.HasIndex("ConsoleId2");
 
                     b.HasIndex("ShoppingCartId");
 
@@ -137,8 +149,16 @@ namespace GameShop.Migrations
             modelBuilder.Entity("GameShop.Models.Product", b =>
                 {
                     b.HasOne("GameShop.Models.Console", null)
-                        .WithMany("Products")
+                        .WithMany("Accessories")
                         .HasForeignKey("ConsoleId");
+
+                    b.HasOne("GameShop.Models.Console", null)
+                        .WithMany("Consoles")
+                        .HasForeignKey("ConsoleId1");
+
+                    b.HasOne("GameShop.Models.Console", null)
+                        .WithMany("Games")
+                        .HasForeignKey("ConsoleId2");
 
                     b.HasOne("GameShop.Models.ShoppingCart", null)
                         .WithMany("Products")
@@ -160,7 +180,11 @@ namespace GameShop.Migrations
 
             modelBuilder.Entity("GameShop.Models.Console", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Accessories");
+
+                    b.Navigation("Consoles");
+
+                    b.Navigation("Games");
                 });
 
             modelBuilder.Entity("GameShop.Models.ShoppingCart", b =>
