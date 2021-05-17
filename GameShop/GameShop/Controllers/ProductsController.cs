@@ -19,6 +19,23 @@ namespace GameShop.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> GamePage(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+
         // GET: Products
         public async Task<IActionResult> Index()
         {

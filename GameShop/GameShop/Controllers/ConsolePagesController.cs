@@ -10,22 +10,41 @@ using GameShop.Models;
 
 namespace GameShop.Controllers
 {
-    public class ConsolesController : Controller
+    public class ConsolePagesController : Controller
     {
         private readonly GameShopContext _context;
 
-        public ConsolesController(GameShopContext context)
+        public ConsolePagesController(GameShopContext context)
         {
             _context = context;
         }
 
-        // GET: Consoles
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> MainPage(int? id)
         {
-            return View(await _context.Console.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var pls = from b in _context.ConsolePage
+                      where b.Id == id
+                      select b.Name;
+            string w = pls.First();
+            var gameSearch = _context.Product.Where(a => a.Consoles.Contains(w));
+            return View("MainPage", await gameSearch.ToListAsync());
         }
 
-        // GET: Consoles/Details/5
+        public async Task<IActionResult> Home()
+        {
+            return View(await _context.ConsolePage.ToListAsync());
+        }
+
+        // GET: ConsolePages
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.ConsolePage.ToListAsync());
+        }
+
+        // GET: ConsolePages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +52,39 @@ namespace GameShop.Controllers
                 return NotFound();
             }
 
-            var console = await _context.Console
+            var consolePage = await _context.ConsolePage
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (console == null)
+            if (consolePage == null)
             {
                 return NotFound();
             }
 
-            return View(console);
+            return View(consolePage);
         }
 
-        // GET: Consoles/Create
+        // GET: ConsolePages/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Consoles/Create
+        // POST: ConsolePages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Type")] Models.Console console)
+        public async Task<IActionResult> Create([Bind("Id,Name")] ConsolePage consolePage)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(console);
+                _context.Add(consolePage);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(console);
+            return View(consolePage);
         }
 
-        // GET: Consoles/Edit/5
+        // GET: ConsolePages/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +92,22 @@ namespace GameShop.Controllers
                 return NotFound();
             }
 
-            var console = await _context.Console.FindAsync(id);
-            if (console == null)
+            var consolePage = await _context.ConsolePage.FindAsync(id);
+            if (consolePage == null)
             {
                 return NotFound();
             }
-            return View(console);
+            return View(consolePage);
         }
 
-        // POST: Consoles/Edit/5
+        // POST: ConsolePages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Type")] Models.Console console)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] ConsolePage consolePage)
         {
-            if (id != console.Id)
+            if (id != consolePage.Id)
             {
                 return NotFound();
             }
@@ -97,12 +116,12 @@ namespace GameShop.Controllers
             {
                 try
                 {
-                    _context.Update(console);
+                    _context.Update(consolePage);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ConsoleExists(console.Id))
+                    if (!ConsolePageExists(consolePage.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +132,10 @@ namespace GameShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(console);
+            return View(consolePage);
         }
 
-        // GET: Consoles/Delete/5
+        // GET: ConsolePages/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +143,30 @@ namespace GameShop.Controllers
                 return NotFound();
             }
 
-            var console = await _context.Console
+            var consolePage = await _context.ConsolePage
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (console == null)
+            if (consolePage == null)
             {
                 return NotFound();
             }
 
-            return View(console);
+            return View(consolePage);
         }
 
-        // POST: Consoles/Delete/5
+        // POST: ConsolePages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var console = await _context.Console.FindAsync(id);
-            _context.Console.Remove(console);
+            var consolePage = await _context.ConsolePage.FindAsync(id);
+            _context.ConsolePage.Remove(consolePage);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ConsoleExists(int id)
+        private bool ConsolePageExists(int id)
         {
-            return _context.Console.Any(e => e.Id == id);
+            return _context.ConsolePage.Any(e => e.Id == id);
         }
     }
 }

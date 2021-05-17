@@ -18,14 +18,6 @@ namespace GameShop.Models
         Consoles,
         Accessories
     }
-    public enum ConsoleType
-    {
-        Ps5,
-        Ps4,
-        XboxOne,
-        XboxXS,
-        Pc
-    }
     public class Product
     {
         public int Id { get; set; }
@@ -37,7 +29,7 @@ namespace GameShop.Models
         public String Name { get; set; }
 
         [Display(Name = "Date Of Release")]
-        public DateTime DateOfRelease { get; set; }
+        public String DateOfRelease { get; set; }
 
         [DataType(DataType.Currency)]
         public float Price { get; set; }
@@ -50,6 +42,6 @@ namespace GameShop.Models
 
         public String Trailer { get; set; }
 
-        public ConsoleType Consoles { get; set; }
+        public String Consoles { get; set; }
     }
 }

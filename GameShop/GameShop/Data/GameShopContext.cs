@@ -14,12 +14,12 @@ namespace GameShop.Data
         {
         }
 
-        public DbSet<GameShop.Models.Console> Console { get; set; }
-
         public DbSet<GameShop.Models.Product> Product { get; set; }
 
         public DbSet<GameShop.Models.ShoppingCart> ShoppingCart { get; set; }
 
         public DbSet<GameShop.Models.User> User { get; set; }
+
+        public DbSet<GameShop.Models.ConsolePage> ConsolePage { get; set; }
     }
 }

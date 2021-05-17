@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DateOfRelease" class="control-label"></label>
-                <input asp-for="DateOfRelease" class="form-control" />
+                <input type="date" asp-for="DateOfRelease" class="form-control" />
                 <span asp-validation-for="DateOfRelease" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -68,11 +68,11 @@
                 <label asp-for="Consoles" class="control-label"></label>
                 <input list="select_list" asp-for="Consoles" class="form-control"></>
                 <datalist id="select_list">
-                    <option lebel="Ps5" value="Ps5"></option>
-                    <option lebel="Ps4" value="Ps4"></option>
+                    <option lebel="PS5" value="PS5"></option>
+                    <option lebel="PS4" value="PS4"></option>
                     <option lebel="XboxOne" value="XboxOne"></option>
                     <option lebel="XboxXS" value="XboxXS"></option>
-                    <option lebel="Pc" value="Pc"></option>
+                    <option lebel="PC" value="PC"></option>
                 </datalist>
                 <span asp-validation-for="Consoles" class="text-danger"></span>
             </div>

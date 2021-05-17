@@ -16,22 +16,22 @@ namespace GameShop.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("GameShop.Models.Console", b =>
+            modelBuilder.Entity("GameShop.Models.ConsolePage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Console");
+                    b.ToTable("ConsolePage");
                 });
 
             modelBuilder.Entity("GameShop.Models.Product", b =>
@@ -41,14 +41,11 @@ namespace GameShop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ConsoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("Consoles")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Consoles")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateOfRelease")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateOfRelease")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -78,8 +75,6 @@ namespace GameShop.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ConsoleId");
 
                     b.HasIndex("ShoppingCartId");
 
@@ -136,10 +131,6 @@ namespace GameShop.Migrations
 
             modelBuilder.Entity("GameShop.Models.Product", b =>
                 {
-                    b.HasOne("GameShop.Models.Console", null)
-                        .WithMany("Products")
-                        .HasForeignKey("ConsoleId");
-
                     b.HasOne("GameShop.Models.ShoppingCart", null)
                         .WithMany("Products")
                         .HasForeignKey("ShoppingCartId");
@@ -156,11 +147,6 @@ namespace GameShop.Migrations
                         .HasForeignKey("CartId");
 
                     b.Navigation("Cart");
-                });
-
-            modelBuilder.Entity("GameShop.Models.Console", b =>
-                {
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("GameShop.Models.ShoppingCart", b =>

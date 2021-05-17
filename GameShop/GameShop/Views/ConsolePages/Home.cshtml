@@ -1,0 +1,13 @@
+﻿@model IEnumerable<GameShop.Models.ConsolePage>
+
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="navbar">
+    @foreach (var item in Model)
+    {
+        <form asp-action="MainPage" asp-route-id="@item.Id">
+            <button type="submit" name="@Html.DisplayFor(modelItem => item.Name)" class="btn btn-primary">@Html.DisplayFor(modelItem => item.Name)</button>
+        </form>
+    }
+</div>

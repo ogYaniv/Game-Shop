@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GameShop.Models.Product>
+
+@{
+    ViewData["Title"] = "MainPage";
+}
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <img src="@Html.DisplayFor(modelItem => item.Image)" alt="display" width="150" height="150" />
+        <br />
+        @Html.DisplayFor(modelItem => item.Name)
+        <br />
+        @Html.DisplayFor(modelItem => item.Price)
+        <br />
+        <form asp-action="GamePage" asp-controller="Products" asp-route-id="@item.Id">
+            <button type="submit" name="More" class="btn btn-primary">More</button>
+        </form>
+        <br/>
+            }
+    </div>
