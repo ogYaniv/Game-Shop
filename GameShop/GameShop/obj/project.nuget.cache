@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I8PBj3AsOLPiwRDOEDe6NwEpCfdLk4EolPuiZJ0zRP3bryVwFDCaJGf64U/R69VeWFNAyUmkvJcFlDvSxltEDA==",
+  "dgSpecHash": "JUVCOJ1Y/qHcX+QWNUsjr2C3S42ol/s06X7Tyms2KosYhHt9k2DMsqZ6v0dBGGwG1ufHiGg2a1qBBzu0nVWwTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yaniv\\Source\\Repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\GameShop.csproj",
+  "projectFilePath": "C:\\Users\\yaniv\\source\\repos\\ogYaniv\\Game-Shop\\GameShop\\GameShop\\GameShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yaniv\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\yaniv\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
