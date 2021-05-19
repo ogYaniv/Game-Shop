@@ -4,15 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="white">Index</h1>
 
-<p>
+<p class="white">
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="white">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th></th>
@@ -20,7 +20,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="white">
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

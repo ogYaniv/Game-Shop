@@ -3,18 +3,116 @@
 @{
     ViewData["Title"] = "MainPage";
 }
-<div class="card-columns">
-    @foreach (var item in Model)
-    {
-        <img src="@Html.DisplayFor(modelItem => item.Image)" alt="display" width="150" height="150" />
-        <br />
-        @Html.DisplayFor(modelItem => item.Name)
-        <br />
-        @Html.DisplayFor(modelItem => item.Price)
-        <br />
-        <form asp-action="GamePage" asp-controller="Products" asp-route-id="@item.Id">
-            <button type="submit" name="More" class="btn btn-primary">More</button>
-        </form>
-        <br/>
-            }
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Action " />Action
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Adventure " />Adventure
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Shooter " />Shooter
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="RolePlayingGames " />RolePlayingGames
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Racing " />Racing
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Sport " />Sport
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Fighting " />Fighting
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Consoles " />Consoles
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input product_check" value="Accessories " />Accessories
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                <div class="col-md-3 mb-2">
+                    <a asp-action="GamePage" asp-controller="Products" asp-route-id="@item.Id">
+                        <div class="card-deck">
+                            <div class="card border-secondary bg-dark">
+                                <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" alt="display" />
+                                <div class="card-img-overlay">
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-white">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                        <br />
+                                        Price: @Html.DisplayFor(modelItem => item.Price)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                }
+            </div>
+        </div>
     </div>
+</div>
