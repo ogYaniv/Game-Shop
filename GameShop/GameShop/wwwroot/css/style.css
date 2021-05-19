@@ -1,0 +1,24 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-image: url(old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+
+.nav-item {
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+
+.white {
+    color: #fff;
+}

@@ -149,7 +149,6 @@ C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0
 C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\ShoppingCarts\Details.cshtml.g.cs
 C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\ShoppingCarts\Edit.cshtml.g.cs
 C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\ShoppingCarts\Index.cshtml.g.cs
-C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\Create.cshtml.g.cs
 C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\Delete.cshtml.g.cs
 C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\Details.cshtml.g.cs
 C:\Users\yaniv\Source\Repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\Edit.cshtml.g.cs
@@ -167,3 +166,6 @@ C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0
 C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\ConsolePages\MainPage.cshtml.g.cs
 C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\ConsolePages\Home.cshtml.g.cs
 C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Products\GamePage.cshtml.g.cs
+C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\Login.cshtml.g.cs
+C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\Register.cshtml.g.cs
+C:\Users\yaniv\source\repos\ogYaniv\Game-Shop\GameShop\GameShop\obj\Debug\net5.0\Razor\Views\Users\AccessDenied.cshtml.g.cs
