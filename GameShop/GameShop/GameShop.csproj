@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\images\black-background.jpeg" />
     <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\images\loader.gif" />
   </ItemGroup>
 
   <ItemGroup>

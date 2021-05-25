@@ -3,19 +3,49 @@
 @{
     ViewData["Title"] = "Home";
 }
+<ul class="nav justify-content-center bg-danger">
+    @foreach (var item in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-area="" asp-action="MainPage" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+        </li>
+    }
+</ul>
+<br />
+<br />
+<br />
+<br />
+
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-danger border-bottom box-shadow mb-3">
-        <div class="container">
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        @foreach (var item in Model)
-                        {
-                        <a class="nav-link text-white" asp-area="" asp-action="MainPage" asp-route-id="@item.Id" >@Html.DisplayFor(modelItem => item.Name)</a>
-                        }
-                    </li>
-                </ul>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/images/gow4bg.jpg" alt=" god of war 1" width="1100" height="670">
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/gow4bg2.jpg" alt="god of war 2" width="1100" height="670">
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/bf3bg.jpg" alt="bf3" width="1100" height="670">
+                <div class="carousel-caption">
+                </div>
             </div>
         </div>
-</nav>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
 </body>

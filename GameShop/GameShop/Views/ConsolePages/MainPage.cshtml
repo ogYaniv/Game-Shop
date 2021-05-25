@@ -3,116 +3,165 @@
 @{
     ViewData["Title"] = "MainPage";
 }
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-3">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Action " />Action
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Adventure " />Adventure
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Shooter " />Shooter
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="RolePlayingGames " />RolePlayingGames
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Racing " />Racing
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Sport " />Sport
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Fighting " />Fighting
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Consoles " />Consoles
-                        </label>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input product_check" value="Accessories " />Accessories
-                        </label>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="col-lg-9">
-            <div class="row">
-                @foreach (var item in Model)
-                {
-                <div class="col-md-3 mb-2">
-                    <a asp-action="GamePage" asp-controller="Products" asp-route-id="@item.Id">
-                        <div class="card-deck">
-                            <div class="card border-secondary bg-dark">
-                                <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" alt="display" />
-                                <div class="card-img-overlay">
-                                </div>
-                                <div class="card-body">
-                                    <p class="text-white">
-                                        @Html.DisplayFor(modelItem => item.Name)
-                                        <br />
-                                        Price: @Html.DisplayFor(modelItem => item.Price)
-                                    </p>
-                                </div>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <form >
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Action" name="Action" />
+                                <label class="custom-control-label" for="Action">
+                                    Action
+                                </label>
                             </div>
-                        </div>
-                    </a>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Adventure" name="Adventure" />
+                                <label class="custom-control-label" for="Adventure">
+                                    Adventure
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Shooter" name="Shooter" />
+                                <label class="custom-control-label" for="Shooter">
+                                    Shooter
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="RolePlayingGames" name="RolePlayingGames" />
+                                <label class="custom-control-label" for="RolePlayingGames">
+                                    Role Playing Games
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Racing" name="Racing" />
+                                <label class="custom-control-label" for="Racing">
+                                    Racing
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Sport" name="Sport" />
+                                <label class="custom-control-label" for="Sport">
+                                    Sport
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Fighting" name="Fighting" />
+                                <label class="custom-control-label" for="Fighting">
+                                    Fighting
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Consoles" name="Consoles" />
+                                <label class="custom-control-label" for="Consoles">
+                                    Consoles
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="Accessories" name="Accessories" />
+                                <label class="custom-control-label" for="Accessories">
+                                    Accessories
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-lg-9">
+                <div class="text-center">
+                    <img src="~/images/loader.gif" id="loader" width="200" style="display:none" />
                 </div>
-                }
+                <div class="row" id="result">
+                    <div class="card-deck">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-3 mb-2">
+                                <a asp-action="GamePage" asp-controller="Products" asp-route-id="@item.Id">
+                                    <div class="card border-secondary bg-dark">
+                                        <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" alt="display" />
+                                        <div class="card-img-overlay">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <p class="text-white">
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                                <br />
+                                                Price: @Html.DisplayFor(modelItem => item.Price)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+
+
+<script type="text/javascript">
+const { ready } = require("jquery");
+
+    $(document).ready(function () {
+
+        $(".product_check").click(function () {
+            $("#loader").show();
+
+            var action = 'data';
+            var genre = get_filter_text('genre');
+
+            $.ajax({
+                url: 'action.php',
+                method: 'POST',
+                data: { action: action, genre: genre },
+                success: function (response) {
+                    $("#result").html(response);
+                    $("#loader").hide();
+                }
+            });
+        });
+
+        function get_filter_text(text_id) {
+            var filterData = [];
+            $('#' + text_id + ':checked').each(function () {
+                filterData.push($(this).val());
+            });
+            return filterData;
+        }
+    });
+</script>

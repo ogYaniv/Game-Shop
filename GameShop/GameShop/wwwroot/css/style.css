@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 
-body
-{
-    background-image: url(old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpeg);
+body {
+    background-image: url(../images/black-background.jpeg);
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
@@ -21,4 +20,8 @@ body
 
 .white {
     color: #fff;
+}
+
+.bitch {
+    background-color: rgb(148 121 16);
 }
