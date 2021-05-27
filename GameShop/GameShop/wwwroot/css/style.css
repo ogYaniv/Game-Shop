@@ -10,12 +10,27 @@ body {
     background-position: center;
     font-family: sans-serif;
 }
-
-
+.headline-bg {
+    background-image: url(../images/redHbgjpg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.nav-bg {
+    background-image: url(../images/bluebg2.jpg);
+    background-size: cover;
+    background-position: center;
+   
+}
+.nav-button {
+    background-color: none;
+}
 .nav-item {
     display: inline-flex;
     list-style: none;
-    color: #fff;
+    color: #f7d404;
+}
+.navLogin{
+    margin:0px;
 }
 
 .white {

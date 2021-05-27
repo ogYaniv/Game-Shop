@@ -3,14 +3,27 @@
 @{
     ViewData["Title"] = "Home";
 }
-<ul class="nav justify-content-center bg-danger">
+
+
+<lu class="nav justify-content-around nav-bg">
+ 
     @foreach (var item in Model)
     {
-        <li class="nav-item">
-            <a class="nav-link text-white" asp-area="" asp-action="MainPage" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+        <li class="nav-item dropdown">
+
+            <button type="button" class=" btn dropdown-toggle text-warning nav-button" data-toggle="dropdown" asp-area="" asp-action="MainPage" asp-route-id="@item.Id">
+                @Html.DisplayFor(modelItem => item.Name)
+            </button>
+            <div class="dropdown-menu nav-bg">
+                <a class="dropdown-item text-warning" asp-action="GamePage" asp-route-id="@item.Id">Action</a>
+                <a class="dropdown-item text-warning" href="#">Another action</a>
+                <a class="dropdown-item text-warning" href="#">Something else here</a>
+            </div>
+
+
         </li>
     }
-</ul>
+</lu>
 <br />
 <br />
 <br />
